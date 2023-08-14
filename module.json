@@ -1,0 +1,8 @@
+{
+    "name": "DnSoft Helper",
+    "description": "DnSoft Helper",
+    "namespace": "DnSoft\\Helper\\",
+    "providers": [
+        "DnSoft\\Helper\\HelperServiceProvider"
+    ]
+}

@@ -1,0 +1,8 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Module\__STUDLY_NAME__\Http\Controllers\Web\__STUDLY_NAME__Controller;
+
+Route::prefix('__KEBAB_NAME__')->group(function () {
+    Route::get('', [__STUDLY_NAME__Controller::class, 'index'])->name('__LOWER_NAME__.web.test-__KEBAB_NAME__.index');
+});

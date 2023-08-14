@@ -1,0 +1,9 @@
+<?php
+
+namespace Module\__MODULE_NAME_UPPER__\Repositories;
+
+use DnSoft\Core\Repositories\BaseRepositoryInterface;
+
+interface __STUDLY_NAME__RepositoryInterface extends BaseRepositoryInterface
+{
+}

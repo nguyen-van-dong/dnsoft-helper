@@ -1,0 +1,3 @@
+@input(['name' => 'name', 'label' => __('__MODULE_NAME__::__MODEL_NAME__.name')])
+@textarea(['name' => 'description', 'label' => __('__MODULE_NAME__::__MODEL_NAME__.description')])
+@checkbox(['name' => 'is_active', 'label' => __('__MODULE_NAME__::__MODEL_NAME__.is_active')])

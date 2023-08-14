@@ -1,0 +1,40 @@
+{
+    "name": "dnsoft/helpers",
+    "description": "DnSoft Helpers",
+    "keywords": [
+        "dnsoft"
+    ],
+    "homepage": "https://dnsoft.xyz",
+    "support" : {
+        "email" : "support@dnsoft.vn"
+    },
+    "authors": [
+        {
+            "name": "Dong Nguyen",
+            "email": "dong.paul2810@gmail.com"
+        }
+    ],
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "DnSoft\\Helper\\": "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "DnSoft\\Helper\\Tests\\" : "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DnSoft\\Helper\\HelperServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

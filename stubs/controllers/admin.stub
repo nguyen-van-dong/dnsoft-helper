@@ -1,0 +1,90 @@
+<?php
+
+namespace Module\__STUDLY_NAME__\Http\Controllers\Admin;
+
+use DnSoft\Core\Facades\MenuAdmin;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
+use Module\__MODULE_NAME_UPPER__\Http\Requests\__MODEL_NAME_UPPER__Request;
+use Module\__MODULE_NAME_UPPER__\Repositories\__MODEL_NAME_UPPER__RepositoryInterface;
+
+class __STUDLY_NAME__Controller extends Controller
+{
+  /**
+   * @var __MODEL_NAME_UPPER__RepositoryInterface
+   */
+  private $__MODEL_NAME__Repository;
+
+  public function __construct(__MODEL_NAME_UPPER__RepositoryInterface $__MODEL_NAME__Repository)
+  {
+    $this->__MODEL_NAME__Repository = $__MODEL_NAME__Repository;
+  }
+
+  public function index(Request $request)
+  {
+    $items = $this->__MODEL_NAME__Repository->paginate($request->input('max', 20));
+    return view("__LOWER_NAME__::admin.__MODEL_NAME__.index", compact('items'));
+  }
+
+  public function create()
+  {
+    MenuAdmin::activeMenu('__MODEL_NAME__');
+    $item = null;
+    return view("__LOWER_NAME__::admin.__MODEL_NAME__.create", compact('item'));
+  }
+
+  public function store(__MODEL_NAME_UPPER__Request $request)
+  {
+    $item = $this->__MODEL_NAME__Repository->create($request->all());
+
+    if ($request->input('continue')) {
+      return redirect()
+        ->route('__LOWER_NAME__.admin.__MODEL_NAME__.edit', $item->id)
+        ->with('success', __('__LOWER_NAME__::__MODEL_NAME__.notification.created'));
+    }
+
+    return redirect()
+      ->route('__LOWER_NAME__.admin.__MODEL_NAME__.index')
+      ->with('success', __('__LOWER_NAME__::__MODEL_NAME__.notification.created'));
+  }
+
+  public function edit($id)
+  {
+    MenuAdmin::activeMenu('__MODEL_NAME_UPPER__');
+
+    $item = $this->__MODEL_NAME__Repository->find($id);
+    return view("__LOWER_NAME__::admin.__MODEL_NAME__.edit", compact('item'));
+  }
+
+  public function update(__MODEL_NAME_UPPER__Request $request, $id)
+  {
+    $item = $this->__MODEL_NAME__Repository->updateById($request->all(), $id);
+
+    if ($request->input('continue')) {
+      return redirect()
+        ->route('__LOWER_NAME__.admin.__MODEL_NAME__.edit', $item->id)
+        ->with('success', __('__LOWER_NAME__::__MODEL_NAME__.notification.updated'));
+    }
+
+    return redirect()
+      ->route('__LOWER_NAME__.admin.__MODEL_NAME__.index')
+      ->with('success', __('__LOWER_NAME__::__MODEL_NAME__.notification.updated'));
+  }
+
+  public function destroy($id, Request $request)
+  {
+    $this->__MODEL_NAME__Repository->delete($id);
+
+    if ($request->ajax()) {
+      Session::flash('success', __('__LOWER_NAME__::__MODEL_NAME__.notification.deleted'));
+      return response()->json([
+        'success' => true,
+      ]);
+    }
+
+    return redirect()
+      ->route('__LOWER_NAME__.admin.__MODEL_NAME__.index')
+      ->with('success', __('__LOWER_NAME__::__MODEL_NAME__.notification.deleted'));
+  }
+}

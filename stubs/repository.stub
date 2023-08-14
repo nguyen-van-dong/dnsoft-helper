@@ -1,0 +1,11 @@
+<?php
+
+namespace Module\__MODULE_NAME_UPPER__\Repositories\Eloquents;
+
+use DnSoft\Core\Repositories\BaseRepository;
+use Module\__MODULE_NAME_UPPER__\Repositories\__STUDLY_NAME__RepositoryInterface;
+
+class __STUDLY_NAME__Repository extends BaseRepository implements __STUDLY_NAME__RepositoryInterface
+{
+
+}

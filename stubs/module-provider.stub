@@ -1,0 +1,25 @@
+<?php
+
+namespace Module\__STUDLY_NAME__;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider;
+
+class __STUDLY_NAME__ServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        $this->loadRoutes();
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', '__KEBAB_NAME__');
+    }
+
+    protected function loadRoutes()
+    {
+        Route::middleware(['web'])
+            ->prefix(config('core.admin_prefix'))
+            ->group(__DIR__ . '/../routes/admin.php');
+
+        Route::middleware(['web'])
+            ->group(__DIR__ . '/../routes/web.php');
+    }
+}

@@ -1,0 +1,13 @@
+<?php
+
+namespace Module\__STUDLY_NAME__\Http\Controllers\Web;
+
+use Illuminate\Routing\Controller;
+
+class __STUDLY_NAME__Controller extends Controller
+{
+    public function index()
+    {
+        return view('__KEBAB_NAME__::web.test-__KEBAB_NAME__.index');
+    }
+}

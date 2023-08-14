@@ -1,0 +1,8 @@
+{
+    "name": "__STUDLY_NAME__",
+    "description": "__STUDLY_NAME__",
+    "namespace": "Module\\__STUDLY_NAME__\\",
+    "providers": [
+        "Module\\__STUDLY_NAME__\\__STUDLY_NAME__ServiceProvider"
+    ]
+}

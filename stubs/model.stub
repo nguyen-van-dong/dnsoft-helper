@@ -1,0 +1,10 @@
+<?php
+
+namespace Module\__MODULE_NAME_UPPER__\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class __STUDLY_NAME__ extends Model
+{
+    //
+}

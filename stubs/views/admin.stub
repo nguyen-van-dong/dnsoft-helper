@@ -1,0 +1,5 @@
+@extends('core::admin.master')
+
+@section('content')
+    <h1>__MODULE_NAME__</h1>
+@stop
