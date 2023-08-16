@@ -33,6 +33,7 @@ class ModelGenerator
     'views/admin/edit.stub' => 'resources/views/admin/__KEBAB_NAME__/edit.blade.php',
     'views/admin/__fields.stub' => 'resources/views/admin/__KEBAB_NAME__/__fields.blade.php',
     'model.stub' => 'src/Models/__STUDLY_NAME__.php',
+    'migration.stub' => 'database/migrations/__MIGRATION_FORMAT___create___MODULE_NAME______MODEL_NAME__s_table.php',
   ];
 
   /**
