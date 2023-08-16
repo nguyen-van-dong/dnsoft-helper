@@ -3,8 +3,15 @@
 namespace Module\__MODULE_NAME_UPPER__\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class __STUDLY_NAME__ extends Model
 {
-    //
+  use HasFactory;
+
+  protected $table = '__MODULE_NAME______MODEL_NAME__s';
+
+  protected $fillable = [
+    'name',
+  ];
 }
