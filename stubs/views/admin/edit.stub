@@ -1,4 +1,4 @@
-@extends('core::v1.admin.master')
+@extends('core::admin.master')
 
 @section('meta_title', __('__MODULE_NAME__::__MODEL_NAME__.edit.page_title'))
 
